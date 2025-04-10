@@ -26,6 +26,28 @@
 import java.util.*;
 public class App {
     public static void main(String[] args) throws Exception {
+        ArrayList<Integer> list = new ArrayList<>();
         Scanner reader = new Scanner(System.in);
+        System.out.println("Enter values for the list.");
+        int input = Integer.valueOf(reader.nextLine());
+        while(true){
+            if(input == (-1)){
+                System.out.println(list);
+                break;
+            }
+            list.add(input); 
+            if (list.contains(input)){ //there are problems here
+                System.out.println("You cannot add duplicates.");
+                System.out.println("Do you want to delete the existing value?");
+                String word = reader.nextLine();
+                if(word.equals("yes")){
+                    list.remove(input);
+                } else {
+                    return;
+                }
+            }
+            }
+    
+        }
     }
-}
+
